@@ -12,9 +12,13 @@
 		A042CDA61BD3B1E3009C5456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A042CDA41BD3B1E3009C5456 /* Main.storyboard */; };
 		A042CDA81BD3B1E3009C5456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A042CDA71BD3B1E3009C5456 /* Assets.xcassets */; };
 		A042CDAB1BD3B1E3009C5456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A042CDA91BD3B1E3009C5456 /* LaunchScreen.storyboard */; };
+		F5B873B7CADB65963C9C03B3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8152B12F163CE900E8B023 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540A2226106342AC47E1D946 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		853E383813A690CBCC9EB3B3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		9C8152B12F163CE900E8B023 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A042CD9D1BD3B1E3009C5456 /* Coal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A042CDA01BD3B1E3009C5456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A042CDA21BD3B1E3009C5456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B873B7CADB65963C9C03B3 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A26AE5FF8E64BF4D7704C06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				540A2226106342AC47E1D946 /* Pods.debug.xcconfig */,
+				853E383813A690CBCC9EB3B3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A042CD941BD3B1E3009C5456 = {
 			isa = PBXGroup;
 			children = (
 				A042CD9F1BD3B1E3009C5456 /* Coal */,
 				A042CD9E1BD3B1E3009C5456 /* Products */,
+				0A26AE5FF8E64BF4D7704C06 /* Pods */,
+				D9F796FC59E83A400E2C0443 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Coal;
 			sourceTree = "<group>";
 		};
+		D9F796FC59E83A400E2C0443 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C8152B12F163CE900E8B023 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A042CDAF1BD3B1E3009C5456 /* Build configuration list for PBXNativeTarget "Coal" */;
 			buildPhases = (
+				B5404EA03716CBD30B0B56D2 /* Check Pods Manifest.lock */,
 				A042CD991BD3B1E3009C5456 /* Sources */,
 				A042CD9A1BD3B1E3009C5456 /* Frameworks */,
 				A042CD9B1BD3B1E3009C5456 /* Resources */,
+				41910CDA48E3F6DE24D6AAB0 /* Embed Pods Frameworks */,
+				4A4C5F065246896DEC927D0D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41910CDA48E3F6DE24D6AAB0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A4C5F065246896DEC927D0D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5404EA03716CBD30B0B56D2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A042CD991BD3B1E3009C5456 /* Sources */ = {
@@ -244,6 +319,7 @@
 		};
 		A042CDB01BD3B1E3009C5456 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 540A2226106342AC47E1D946 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Coal/Info.plist;
@@ -255,6 +331,7 @@
 		};
 		A042CDB11BD3B1E3009C5456 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 853E383813A690CBCC9EB3B3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Coal/Info.plist;
@@ -283,6 +360,7 @@
 				A042CDB11BD3B1E3009C5456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
