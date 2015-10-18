@@ -14,7 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Alamofire.request(.GET, "http://httpbin.org/get")
+        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+            .responseData { response in
+                print(response.request)
+                print(response.response)
+                print(response.result)
+            }
     }
 
     override func didReceiveMemoryWarning() {
